@@ -1,0 +1,30 @@
+Funcionalidade: Buscar e Adicionar Produto ao Carrinho
+
+  Contexto:
+    O usuário está na página inicial da loja online
+
+  Cenário: Buscar um produto e adicioná-lo ao carrinho
+    Dado que eu busco por "smartphone"
+    Quando eu clico no primeiro resultado da busca
+    E eu clico no botão "Adicionar ao Carrinho"
+    Então eu devo ver o produto no carrinho
+
+  Cenário: Validar os produtos no carrinho na tela de pagamento
+    Dado que eu tenho produtos no carrinho
+    Quando eu clico no botão "Finalizar Compra"
+    Então eu devo ver os mesmos produtos listados na tela de pagamento
+	
+	
+	
+Funcionalidade: Buscar Produto via API
+
+  Cenário: Buscar um produto por nome
+    Dado que eu faço uma requisição GET para a API "/catalog/api/v1/products/search" com o parâmetro "query=smartphone"
+    Quando eu recebo a resposta
+    Então o status code deve ser 200
+    E a resposta deve conter produtos que contenham a palavra "smartphone" no nome
+
+  Cenário: Obter detalhes de um produto específico
+    Dado que eu tenho o ID de um produto
+    Quando eu faço uma requisição GET para a API "/api/v1/products/{product_id}"
+    Então eu devo receber os detalhes do produto
