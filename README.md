@@ -10,5 +10,11 @@
 
 Para executar os testes, use o comando:
 
-```bash
-npx cypress open
+`npx cypress open`
+
+## Observação 
+
+Alguns arquivos de intregação estão no seguintes diretorios abaixo:
+
+1. \PLARD - Testes\Automação\cypress\integration\api.
+2. \PLARD - Testes\Automação\cypress\integration\web.
